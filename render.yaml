@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: veyora-restaurant-whatsapp-bot
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: DEMO_MODE
+        value: true
+      - key: STATE_DIR
+        value: ./data
+      - key: RESTAURANT_NAME
+        value: VEYORA Demo Restaurant
+      - key: TABLES
+        value: T01,T02,T03
+      - key: TAX_RATE
+        value: "0.05"
+      - key: CURRENCY
+        value: INR
+      - key: CURRENCY_SYMBOL
+        value: ₹
+    # Disk persistence for sessions and orders between requests
+    disk:
+      name: veyora-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
