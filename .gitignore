@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.local
+data/
+qr-codes/*.png
+npm-debug.log*
+.yarn-integrity
+.cache/
