@@ -1,7 +1,8 @@
+ 
 {
   "name": "veyora-restaurant-whatsapp-bot",
   "version": "1.0.0",
-  "description": "Restaurant WhatsApp automation bot demo accessed via table QR codes (WhatsApp Business Platform Cloud API ready, with simulation mode)",
+  "description": "Restaurant WhatsApp automation bot",
   "main": "dist/src/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
@@ -14,14 +15,16 @@
   "author": "VEYORA",
   "license": "MIT",
   "dependencies": {
+    "@supabase/supabase-js": "^2.119.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "qrcode": "^1.5.3"
   },
-  
-"dependencies": {
-  "@supabase/supabase-js": "^2.119.2",
-  "dotenv": "^16.4.5",
-  "express": "^4.19.2",
-  "qrcode": "^1.5.3"
-},
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "@types/qrcode": "^1.0.5",
+    "tsx": "^4.11.0",
+    "typescript": "^5.5.4"
+  }
+}
