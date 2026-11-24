@@ -14,7 +14,7 @@ import {
 import { ConversationRouter } from './router';
 import { createWebhookRouter } from './webhook';
 import { createSimulatorRouter } from './simulator';
-
+import { createPlatformRouter } from './platform/routes';
 export interface AppParts {
   app: express.Application;
   sessions: SessionStore;
@@ -53,7 +53,7 @@ export function createApp(): AppParts {
   });
 
   app.use(createWebhookRouter(sessions, orders, router, adapter));
-
+app.use('/api/platform', createPlatformRouter());
   if (config.demoMode) {
     app.use(createSimulatorRouter(sessions, router, adapter));
     console.log('[demo] simulation mode active — use /simulate/* endpoints');
