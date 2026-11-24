@@ -1,4 +1,4 @@
-
+import * as crypto from "node:crypto";
 import { DEMO_BUSINESS } from "./config";
 import { platformStore } from "./store";
 import type {
